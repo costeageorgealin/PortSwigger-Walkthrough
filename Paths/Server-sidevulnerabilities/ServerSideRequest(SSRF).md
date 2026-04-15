@@ -1,0 +1,11 @@
+01. Basic SSRF against the local server 
+
+This lab has a stock check feature which fetches data from an internal system.
+To solve the lab, change the stock check URL to access the admin interface at http://localhost/admin and delete the user carlos.
+
+For this lab, I intercepted the request from the 'Check Stock' button in Burp Suite and sent it to Repeater. 
+After that, I changed the stockAPI parameter to http://localhost, and this allowed me to see the Admin Panel. 
+I followed the pattern, checked the HTML code, and discovered the route I needed to complete this challenge: http://localhost/admin/delete?username=carlos.
+<img width="979" height="675" alt="image" src="https://github.com/user-attachments/assets/3f691eef-375c-4c76-90af-15e9f430d70a" />
+
+
